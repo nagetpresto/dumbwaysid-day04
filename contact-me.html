@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>DAY 4&5</title>
+
+        <!-- Template Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet">
+
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    </head>
+
+    <body>
+     
+        <!-- NavBar -->
+        <header>
+            <a class="nav-logo" href="index.html">
+                <img src="assets/img/navbar.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <ul class="nav-link">
+                    <li><a class="nav-item" href="index.html">Home</a></li>
+                    <li><a class="nav-item" href="project.html">Project</a></li>
+                </ul>
+            </nav>
+            <a class="contact-me" href="contact-me.html">Contact Me</a>
+        </header>
+        <!-- End NavBar -->
+
+        <!-- Content -->
+        <section>
+            <div class="container2">
+                <!-- Title -->
+                <div class="header">
+                    <h1>Get in Touch</h1>
+                </div>
+                <!-- End Title -->
+
+                <div class="alert" id="alert" role="alert"></div>
+                
+                <!-- Form -->
+                <form id="form" action="" method = "">
+                    <!-- Input Group -->
+                    <div class="form-group">
+
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                      </div>
+
+                      <div class="input-group">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                      </div>
+
+                      <div class="input-group">
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+                      </div>
+
+                      <div class="input-group">                       
+                        <select class="form-control" name="subject" id="subject">
+                            <option selected>--Subject--</option>
+                            <option value="Hiring Matters">I want to hire you</option>
+                            <option value="Discussion">I want to discuss something</option>
+                            <option value="Collaboration">Let's do a collaboration</option>
+                            <option value="Let's Talk">Let's be friends</option>
+                        </select>
+                      </div>
+
+                      <div class="input-group">                       
+                        <textarea id="comments" class="form-control" placeholder="Leave your comments"></textarea>
+                      </div>
+
+                    </div>
+                    <!-- End Input Group -->
+
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                      <div class="button-group">
+                        <button type="button" onclick="getData()" name="submit" id="submit" class="btn-submit">Submit</button>
+                      </div>
+                    </div>
+                    <!-- End Submiy Button -->
+                </form>   
+                <!-- End Form -->
+            </div>
+        </section>
+        <!-- End Content -->
+
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

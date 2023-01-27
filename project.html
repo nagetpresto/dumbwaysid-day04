@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>DAY 4&5</title>
+
+        <!-- Template Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet">
+
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    </head>
+
+    <body>
+     
+        <!-- NavBar -->
+        <header>
+            <a class="nav-logo" href="index.html">
+                <img src="assets/img/navbar.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <ul class="nav-link">
+                    <li><a class="nav-item" href="index.html">Home</a></li>
+                    <li><a class="nav-item active" href="project.html">Project</a></li>
+                </ul>
+            </nav>
+            <a class="contact-me" href="contact-me.html">Contact Me</a>
+        </header>
+        <!-- End NavBar -->
+
+        <!-- Content -->
+
+        <!-- Top Section -->
+        <section>
+            <div class="container2">
+                <!-- Title -->
+                <div class="header">
+                    <h1>Add Project</h1>
+                </div>
+                <!-- End Title -->
+
+                <!-- Alert -->
+                <div class="alert" id="alert" role="alert"></div>
+                <!-- End Alert -->
+
+                <!-- Form -->
+                <form id="form" action="" method = "">
+                    <!-- Input Group -->
+                    <div class="form-group">
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="pName" id="pName" placeholder="Project Name">
+                        </div>
+
+                        <div class="input-group" style="gap:10px;">
+                            <input type="text" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" name="sDate" id="sDate" class="form-control" placeholder="Start Date">
+                            <input type="text" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" name="eDate" id="eDate" class="form-control" placeholder="End Date">
+                        </div>
+
+                        <div class="input-group">                       
+                            <textarea id="description" name="description" class="form-control" placeholder="Description"></textarea>
+                        </div>
+
+                        <div class="input-group">     
+                            <div class="check-container">
+                                <label class="check-title">Technology</label>
+                                <div class="checkbox">
+                                    <label class="check-label">PHP
+                                        <input id="c1" type="checkbox">
+                                    </label>
+                                    <label class="check-label">Javascript
+                                        <input id="c2" type="checkbox">
+                                    </label>
+                                    <label class="check-label">Python
+                                        <input id="c3" type="checkbox">
+                                    </label>
+                                    <label class="check-label">HTML
+                                        <input id="c4" type="checkbox">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <input id="file" type="file" accept="image/*">
+                        </div>
+
+                    </div>
+                    <!-- End Input Group -->
+
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                      <div class="button-group">
+                        <button type="button" onclick="addProject()" name="add" id="add" class="btn-submit">Add</button>
+                      </div>
+                    </div>
+                    <!-- End Submiy Button -->
+                </form>   
+                <!-- End Form -->
+            </div>
+        </section>
+        <!-- End Top Section -->
+        
+        <!-- Bottom Section -->
+        <section class="project-bottom">
+            <div class="container3">
+
+                <!-- Bottom Section Title -->
+                <div class="s-title">
+                    <h1 class="title">My Projects</h1>
+                </div>
+                <!-- End Bottom Section Title -->
+
+                <!-- Project Section -->
+                <div class="p-card" id="project-section">
+
+                    <!-- Dynamic Card -->
+                    <div class="card-project">
+                        <!-- Project Image -->
+                        <img class="image" src="assets/img/photo.jpg" alt="Project Image" style="width:90%;">
+                        <!-- End Project Image -->
+
+                        <!-- Project Content -->
+                        <div class="card-project-content">
+
+                            <!-- Project Title -->
+                            <div class="p-title" id="title">
+                                <a href="project-blog.html">CRUD PROJECT</a>
+                            </div>
+                            <!-- Project Title -->
+
+                            <!-- Project Period -->
+                            <div class="p-detail" id="period">
+                                Duration: 3 Months
+                            </div>
+                            <!-- End Project Period -->
+
+                            <!-- Project Description -->
+                            <div class="p-desc" id="description">
+                                ashasjf hsafkasf safifsf dsdffsdafasf sfasf  assad asdds asdas asdas sadas                              
+                            </div>
+                            <!-- Project Description -->
+
+                            <!-- Project Icon -->
+                            <span class="p-icon">
+                                <div class="c1" id="c1">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <div class="c2" id="c2">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="c3" id="c3">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="c4" id="c4">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                            </span>
+                            <!-- End Project Icon  -->
+
+                            <!-- Project Button -->
+                            <div class="p-button">
+                                <button type="button" name="edit" id="edit" class="btn-project">Edit</button>
+                                <button type="button" name="delete" id="delete" class="btn-project">Delete</button>
+                            </div>
+                            <!-- End Project Button -->
+
+                        </div>
+                        <!-- End Project Content -->
+                        
+                    </div>
+                    <!-- End Dynamic Card -->
+
+                </div>
+                <!-- End Project Section -->
+
+                
+
+
+            </div>            
+        </section>
+        <!-- End Bottom Section -->
+
+
+        <!-- End Content -->
+
+        <script src="assets/js/project.js"></script>
+    </body>
+</html>
