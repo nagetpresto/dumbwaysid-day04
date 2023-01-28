@@ -511,19 +511,20 @@ h1.title{
   }
 
 .image-container{
-    
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20rem;
+    width: 18rem;
     height: 12rem;
+    margin: 16px 15px 0px 15px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .image{
-    width: 90%;
-    height: 90%;
-    margin: 8px 15px 0px 15px;
+    width: 100%;
     border-radius: 20px;
+    
 }
 
 .card-project-content{
@@ -567,7 +568,7 @@ h1.title{
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    margin: 10px 18px 10px 18px;
+    margin: 20px 18px 10px 18px;
     text-align: justify;
 }
 
