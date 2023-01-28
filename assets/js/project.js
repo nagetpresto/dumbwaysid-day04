@@ -5,15 +5,6 @@
 
 //global array to store data
 let project = []
-let title = ""
-let startDate = ""
-let endDate = ""
-let description = ""
-let icon1 = ""
-let icon2 = ""
-let icon3 = ""
-let icon4 = ""
-let image = ""
 
 //to get data
 function addProject () {
@@ -108,65 +99,59 @@ function addProject () {
 //to add project
 function showProject () {   
 
-    document.getElementById("project-section").innerHTML = ""
-    for(let i=0; i<= project.length; i++) {
-        // console.table(project)
-        console.log(project[i].title)
-        document.getElementById("project-section").innerHTML += `
-        <div class="card-project">
-        <!-- Project Image -->
-        <img class="image" id="image" src="assets/img/photo.jpg" alt="Project Image" style="width:90%;">
-        <!-- End Project Image -->
-
-        <!-- Project Content -->
-        <div class="card-project-content">
-
-            <!-- Project Title -->
-            <div class="p-title" id="title">
-                <a href="project-blog.html">CRUD PROJECT</a>
-            </div>
-            <!-- Project Title -->
-
-            <!-- Project Period -->
-            <div class="p-detail" id="period">
-                Duration: 3 Months
-            </div>
-            <!-- End Project Period -->
-
-            <!-- Project Description -->
-            <div class="p-desc" id="description">
-                ashasjf hsafkasf safifsf dsdffsdafasf sfasf  assad asdds asdas asdas sadas                              
-            </div>
-            <!-- Project Description -->
-
-            <!-- Project Icon -->
-            <span class="p-icon">
-                <div class="c1" id="c1">
-                    <i class="fab fa-php"></i>
-                </div>
-                <div class="c2" id="c2">
-                    <i class="fab fa-js-square"></i>
-                </div>
-                <div class="c3" id="c3">
-                    <i class="fab fa-python"></i>
-                </div>
-                <div class="c4" id="c4">
-                    <i class="fab fa-html5"></i>
-                </div>
-            </span>
-            <!-- End Project Icon  -->
-
-            <!-- Project Button -->
-            <div class="p-button">
-                <button type="button" name="edit" id="edit" class="btn-project">Edit</button>
-                <button type="button" name="delete" id="delete" class="btn-project">Delete</button>
-            </div>
-            <!-- End Project Button -->
-
-        </div>
-        <!-- End Project Content -->
+    document.getElementById("project-section").innerHTML = ''
+    for(let i=0; i< project.length; i++) {
         
-    </div>
+        document.getElementById("project-section").innerHTML += `
+            <div class="card-project">
+            <!-- Project Image -->
+            <div class="image-container">
+                <img class="image" src="${project[i].image}" alt="Project Image">
+            </div>
+            <!-- End Project Image -->
+
+            <!-- Project Content -->
+            <div class="card-project-content">
+                <div class="upper-content">
+                    <!-- Project Title -->
+                <div class="p-title" id="title">
+                    <a href="project-blog.html">${project[i].title}</a>
+                </div>
+                <!-- Project Title -->
+
+                <!-- Project Period -->
+                <div class="p-detail" id="period">
+                    Duration: 3 Months
+                </div>
+                <!-- End Project Period -->
+
+                <!-- Project Description -->
+                <div class="p-desc" id="description">${project[i].description}</div>
+                <!-- Project Description -->
+            </div>
+
+            <div class="bottom-content">
+                <!-- Project Icon -->
+                <span class="p-icon">
+                    <div class="c1" id="c1">${project[i].icon1}</div>
+                    <div class="c2" id="c2">${project[i].icon2}</div>
+                    <div class="c3" id="c3">${project[i].icon3}</div>
+                    <div class="c4" id="c4">${project[i].icon4}</div>
+                </span>
+                <!-- End Project Icon  -->
+
+                <!-- Project Button -->
+                <div class="p-button">
+                    <button type="button" name="edit" id="edit" class="btn-project">Edit</button>
+                    <button type="button" name="delete" id="delete" class="btn-project">Delete</button>
+                </div>
+                <!-- End Project Button -->
+            </div>
+            
+            </div>
+            <!-- End Project Content -->
+            
+        </div>
         `
     }
 
