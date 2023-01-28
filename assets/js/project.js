@@ -14,12 +14,16 @@ function addProject () {
     let startDate = document.getElementById("sDate").value
     let endDate = document.getElementById("eDate").value
     let description = document.getElementById("description").value
-    let icon1 = document.getElementById("c1").checked
-    let icon2 = document.getElementById("c2").checked
-    let icon3 = document.getElementById("c3").checked
-    let icon4 = document.getElementById("c4").checked
+    let c1 = document.getElementById("c1").checked
+    let c2 = document.getElementById("c2").checked
+    let c3 = document.getElementById("c3").checked
+    let c4 = document.getElementById("c4").checked
     let image = document.getElementById('file').files
-    // console.log(image)
+
+    let icon1 = (c1 == true) ? '<i class="fab fa-php"></i>' : '';
+    let icon2 = (c2 == true) ? '<i class="fab fa-js-square"></i>' : '';
+    let icon3 = (c3 == true) ? '<i class="fab fa-python"></i>' : '';
+    let icon4 = (c4 == true) ? '<i class="fab fa-html5"></i>' : '';
 
     //to animate alert
     const elem = document.getElementById("alert");   
@@ -74,22 +78,32 @@ function addProject () {
     else {
         // Convert spesific image to blob object
         image = URL.createObjectURL(image[0])
-        
+
+        // to store icon
+        let icon = [
+            icon1,
+            icon2,
+            icon3,
+            icon4
+        ]
+        console.log(icon)
+
+        // to filter icon
+        let iconFil = icon.filter(elem => elem[1]).reverse()
+        console.log(iconFil)
 
         // to store object
         let dataBlog = {
             image,
             title,
             description,
-            icon1,
-            icon2,
-            icon3,
-            icon4
+            iconFil,
         }
-    
+
         // to add object to the global array
         project.push(dataBlog)
-        // console.table(project)
+        console.log(project)
+
         //to call function
         showProject()
 
@@ -100,8 +114,31 @@ function addProject () {
 function showProject () {   
 
     document.getElementById("project-section").innerHTML = ''
-    for(let i=0; i< project.length; i++) {
-        
+    for(let i=0; i < project.length; i++) {
+
+        if (project[i].iconFil[0] == undefined) {
+            project[i].iconFil[0] = ""
+        }
+        if (project[i].iconFil[1] == undefined) {
+            project[i].iconFil[1] = ""
+        }
+        if (project[i].iconFil[2] == undefined) {
+            project[i].iconFil[2] = ""
+        }
+        if (project[i].iconFil[3] == undefined) {
+            project[i].iconFil[3] = ""
+        }
+        if (project[i].iconFil[4] == undefined) {
+            project[i].iconFil[4] = ""
+        }
+
+        // for (let a=0; a < 4; a++){
+        //     if (project[i].iconFil[a] == undefined) {
+        //         project[i].iconFil[a] = ""
+        //     }
+        // }
+
+
         document.getElementById("project-section").innerHTML += `
             <div class="card-project">
             <!-- Project Image -->
@@ -133,10 +170,10 @@ function showProject () {
             <div class="bottom-content">
                 <!-- Project Icon -->
                 <span class="p-icon">
-                    <div class="c1" id="c1">${project[i].icon1}</div>
-                    <div class="c2" id="c2">${project[i].icon2}</div>
-                    <div class="c3" id="c3">${project[i].icon3}</div>
-                    <div class="c4" id="c4">${project[i].icon4}</div>
+                    <div class="c1" id="c1">${project[i].iconFil[0]}</div>
+                    <div class="c2" id="c2">${project[i].iconFil[1]}</div>
+                    <div class="c3" id="c3">${project[i].iconFil[2]}</div>
+                    <div class="c4" id="c4">${project[i].iconFil[3]}</div>
                 </span>
                 <!-- End Project Icon  -->
 
