@@ -65,7 +65,7 @@ function addProject () {
         document.getElementById("alert").innerHTML = "Description cannot be empty";
     }
 
-    else if (icon1 == false && icon2 == false && icon3 == false && icon4 == false ){
+    else if (icon1 == false && icon2 == false && icon3 == false && icon4 == false){
         //to call alert
         document.getElementById("alert").innerHTML = "Technology cannot be empty";
     }
@@ -86,7 +86,32 @@ function addProject () {
             icon3,
             icon4
         ]
-        console.log(icon)
+        
+        // to get duration
+        let startDate = new Date(document.getElementById("sDate").value)
+        let endDate = new Date(document.getElementById("eDate").value)
+        let diff = endDate.getTime() - startDate.getTime() //in milisec
+        console.log(diff)
+        console.log(startDate)
+        console.log(endDate)
+
+        let durYear = Math.floor(diff / (12 * 30 * 24* 3600 * 1000)) //in year
+        let durMonth = Math.floor(diff / (30 * 24* 3600 * 1000)) //in month
+        let durWeek = Math.floor(diff / (7 * 24* 3600 * 1000)) //in week
+        let durDay = Math.floor(diff / (24* 3600 * 1000)) //in day
+
+        if (durYear > 0) {
+            duration = durYear + " Year(s)"
+        }
+        else if (durMonth > 0 ) {
+            duration = durMonth + " Month(s)"
+        }
+        else if (durWeek > 0 ) {
+            duration = durWeek + " Week(s)"
+        }
+        else if (durDay > 0 ) {
+            duration = durDay + " Day(s)"
+        }
 
         // to filter icon
         let iconFil = icon.filter(elem => elem[1]).reverse()
@@ -98,6 +123,7 @@ function addProject () {
             title,
             description,
             iconFil,
+            duration
         }
 
         // to add object to the global array
@@ -158,7 +184,7 @@ function showProject () {
 
                 <!-- Project Period -->
                 <div class="p-detail" id="period">
-                    Duration: 3 Months
+                    Duration: ${project[i].duration}
                 </div>
                 <!-- End Project Period -->
 
