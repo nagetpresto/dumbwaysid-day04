@@ -95,43 +95,50 @@ function addProject () {
         console.log(startDate)
         console.log(endDate)
 
-        let durYear = Math.floor(diff / (12 * 30 * 24* 3600 * 1000)) //in year
-        let durMonth = Math.floor(diff / (30 * 24* 3600 * 1000)) //in month
-        let durWeek = Math.floor(diff / (7 * 24* 3600 * 1000)) //in week
-        let durDay = Math.floor(diff / (24* 3600 * 1000)) //in day
-
-        if (durYear > 0) {
-            duration = durYear + " Year(s)"
+        if (diff < 0) {
+            //to call alert
+            document.getElementById("alert").innerHTML = "Duration is invalid";
+            duration = ""
         }
-        else if (durMonth > 0 ) {
-            duration = durMonth + " Month(s)"
-        }
-        else if (durWeek > 0 ) {
-            duration = durWeek + " Week(s)"
-        }
-        else if (durDay > 0 ) {
-            duration = durDay + " Day(s)"
-        }
+        else {
+            let durYear = Math.floor(diff / (12 * 30 * 24* 3600 * 1000)) //in year
+            let durMonth = Math.floor(diff / (30 * 24* 3600 * 1000)) //in month
+            let durWeek = Math.floor(diff / (7 * 24* 3600 * 1000)) //in week
+            let durDay = Math.floor(diff / (24* 3600 * 1000)) //in day
 
-        // to filter icon
-        let iconFil = icon.filter(elem => elem[1]).reverse()
-        console.log(iconFil)
+            if (durYear > 0) {
+                duration = durYear + " Year(s)"
+            }
+            else if (durMonth > 0 ) {
+                duration = durMonth + " Month(s)"
+            }
+            else if (durWeek > 0 ) {
+                duration = durWeek + " Week(s)"
+            }
+            else if (durDay > 0 ) {
+                duration = durDay + " Day(s)"
+            }
 
-        // to store object
-        let dataBlog = {
-            image,
-            title,
-            description,
-            iconFil,
-            duration
+            // to filter icon
+            let iconFil = icon.filter(elem => elem[1]).reverse()
+            console.log(iconFil)
+
+            // to store object
+            let dataBlog = {
+                image,
+                title,
+                description,
+                iconFil,
+                duration
+            }
+
+            // to add object to the global array
+            project.push(dataBlog)
+            console.log(project)
+
+            //to call function
+            showProject()
         }
-
-        // to add object to the global array
-        project.push(dataBlog)
-        console.log(project)
-
-        //to call function
-        showProject()
 
     }
 }
